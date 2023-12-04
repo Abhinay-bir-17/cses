@@ -27,12 +27,12 @@ const int M = 1e9 + 7;
 const int N = 1e5 + 10;
 ll fact[N];
 void code() {
-	int n, k; cin >> n >> k;
-	if (k & 1) {
+	ll n, k; cin >> n >> k;
+	if (k & 1) {//  if k is odd then sum of k odd numbers no's cant be even
 		if (!(n & 1)) {
 			cout << "NO" << endl; return;
 		}
-	} else {
+	} else { // if k is even    sum of these k  will be even
 		if (n & 1) {
 			cout << "NO" << endl; return;
 		}
@@ -41,8 +41,9 @@ void code() {
 	if ( n < (k * k)) {
 		cout << "NO" << endl; return;
 	}
-	else cout << "YES" << endl; return;
-
+	else {
+		cout << "YES" << endl;
+	}
 }
 int main()
 {
