@@ -26,8 +26,41 @@ const ll inf = 1e9 + 7;
 const int M = 1e9 + 7;
 const int N = 1e5 + 10;
 ll fact[N];
-void code() {
+void code1(vi v, int n) {   // 2 4 3 6 5 7 8
+	if (n == 1) {
+		cout << v[0] << endl;
+	}
+	int cnt = 0; ll sum = v[0]; ll aux = 0;
+	int l = v[0];
+	for (int i = 1; i < n; i++) {
+		if (v[i] < l) {
+			cnt += 1;
+			aux += v[i];
+		} else {
+			if (cnt > 0) {
+				sum += l * cnt - aux;
+				cnt = 0; aux = 0;
+			} else { // count == 0
 
+			}
+			l = v[i];
+		}
+		sum += v[i];
+	} cout  << sum << endl;
+}
+void code2(int n) {
+
+}
+void code3(vi v, int n, int k) {
+
+}
+void code() {
+	// code here abhinay bir come on you can do it okay.
+	int n; cin >> n;  vi v;
+	RI0n(i, n) {
+		int temp; cin >> temp; v.push_back(temp);
+	}
+	code1(v, n);
 }
 int main()
 {
@@ -39,5 +72,7 @@ int main()
 #endif
 	ios_base::sync_with_stdio(false);
 	cin.tie(0); cout.tie(0);
-	code();
+	int t; cin >> t; while (t--)code();
+
 }
+
