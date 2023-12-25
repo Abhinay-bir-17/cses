@@ -41,11 +41,35 @@ void code() {
 
 	}
 }
+void code2() {
+	int d; cin >> d;
+	// find p
+	int p, q;
+	for (int i = 1 + d; ; i++) {
+		int f = 1;
+		for (int j = 2; j * j <= i; j++) {
+			if (i % j == 0) { f = 0; break;}
+		}
+		if (f) {
+			p = i; break;
+		}
+	}// find q
+	for (int i = d + p; ; i++) {
+		int f = 1;
+		for (int j = 2; j * j <= i; j++) {
+			if (i % j == 0) { f = 0; break;}
+		}
+		if (f) {
+			q = i; break;
+		}
+	}
+	cout << p*q << endl;
+}
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(0); cout.tie(0);
 	int t; cin >> t;
-	while (t--) code();
+	while (t--) code2();
 
 }
