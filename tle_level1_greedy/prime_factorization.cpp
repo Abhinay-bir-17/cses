@@ -33,7 +33,7 @@ void code() {
 	for (int i = 2; i <= n; i++) { // for loop ends when n becomes 1
 		while (n % i == 0) {   // for n= 24 , n= 24/2 = 12, n = 12/2= 6, n= 6/2 = 3;
 			prime_factors.push_back(i);// 3%2!==0 so i becomes 3, n = 3/3 =1;
-			n = n / i;// 1%3!==0 so i = 4, 4<=1, loop stops;
+			n = n / i;// 1%3!==0 so i = 4, 4<=12, loop stops;
 		}
 		// i thouught of updating i = 2 but
 // turns out the 1st factor of new 'n' will be > than i.
@@ -47,10 +47,11 @@ void code1() {
 	vi prime_factors;
 	for (int i = 2; i * i <= n; i++) {
 		while (n % i == 0) {
-			prime_factors.push_back(i); n = n / i;
+			prime_factors.push_back(i);
+			n = n / i;
 		}
 	}
-	if (n > 1)prime_factors.push_back(n);
+	if (n > 1)prime_factors.push_back(n); // this is for the case that n might be prime
 }
 
 int main()
